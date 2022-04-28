@@ -1,10 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.utils.hooks import collect_dynamic_libs
 
 block_cipher = None
 
 
 a = Analysis(['autofill.py'],
-             binaries=[],
+             binaries=collect_dynamic_libs('ansicon'),
              datas=[],
              hiddenimports=['colorama', 'jinxed.terminfo.vtwin10'],
              hookspath=[],
